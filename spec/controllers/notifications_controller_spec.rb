@@ -5,6 +5,8 @@ RSpec.describe NotificationsController do
     it 'send a notification' do
       expect(MessageSender).to receive(:send_message).once
       post :create, message: 'message'
+
+      expect(response).to redirect_to(root_url)
     end
   end
 end
