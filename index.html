@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><title>Instant Lead Alerts</title><style>body, html {
+  height:100%;
+  width:100%;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+  background-color:#ddd;
+}
+.wrapper {
+  height:100%;
+  width:100%;
+}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Instant Lead Alerts"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Instant Lead Alerts</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>In this tutorial, we will learn how to instantly route leads to sales reps (in a real estate scenario) using text messages. Let's get started!</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Setting Up The Application" class="chapter"><div data-title="What Are We Building?" data-file="app/views/home/index.haml" class="step"><h2 id="what-are-we-building-">What Are We Building?</h2>
+<p>You probably already have landing pages or product detail views in your
+web application, which you&#39;re using to generate leads for your sales
+force. In this tutorial, we&#39;ll use Twilio SMS to send your sales folks
+text messages right when a new lead comes in.</p>
+<p>In this example we&#39;ll be implementing instant lead alerts for real estate
+(much like <a href="//www.twilio.com/customers/stories/trulia">our awesome friends at
+Trulia</a>). We&#39;ll create a
+landing page for a new house on the market, and notify a real estate agent
+the moment a potential customer requests information. If you&#39;re not in
+real estate, don&#39;t worry - the same technique can be used for any business
+that needs to distribute leads to sales people.</p>
+<p>Want to learn how it works? Then let&#39;s build it! Click the next arrow
+above to continue the tutorial.</p>
+<hr>
+<p><strong>See Also:</strong></p>
+<ul>
+<li><a href="//www.investopedia.com/terms/s/sales-lead.asp">Sales Lead</a></li>
+</ul>
+</div><div data-title="How It Works" class="step"><h2 id="how-it-works">How It Works</h2>
+<p>Here&#39;s how our example app works at a high level:</p>
+<p><img src="//s3.amazonaws.com/howtodocs/lead-alerts-flow.png" alt="Lead Alerts Flow"></p>
+<ol>
+<li>Your customer arrives at a landing page for your product (in this case,
+a house).</li>
+<li>The customer enters their name and contact information into a form to
+request more information.</li>
+<li>The sales rep responsible for the product (in this case a <em>real estate
+agent</em>) receives a text message notifying them of the new lead.</li>
+</ol>
+</div><div data-title="Landing Page Data" data-file="app/controllers/home_controller.rb" class="step"><h2 id="landing-page-data">Landing Page Data</h2>
+<p>To display a landing page for our house, we&#39;ll first need some data about
+the fictional house we&#39;ve put on the market. For demonstration purposes,
+we&#39;ve hard-coded a ruby hash containing information we need.</p>
+<hr>
+<p><strong>See Also:</strong></p>
+<ul>
+<li><a href="//guides.rubyonrails.org/action_controller_overview.html">Action Controller Overview</a></li>
+<li><a href="//docs.ruby-lang.org/en/2.0.0/Hash.html">Hash</a></li>
+</ul>
+</div><div data-title="Rendering the Landing Page" data-file="app/views/home/index.haml" class="step"><h2 id="rendering-the-landing-page">Rendering the Landing Page</h2>
+<p>In our HAML template, we insert data about the house, and in a sidebar
+include a form for the user to enter in their contact information to
+request more info about the home.</p>
+<hr>
+<p><strong>See Also:</strong></p>
+<ul>
+<li><a href="//haml.info/">HAML</a></li>
+</ul>
+</div><div data-title="Creating a Twilio REST API Client" data-file="lib/message_sender.rb" data-highlight="6-34" class="step"><h2 id="creating-a-twilio-rest-api-client">Creating a Twilio REST API Client</h2>
+<p>When our application is started, we create an authenticated <em>Twilio REST
+API client</em> that we can use across all requests to our controller. We
+initialize it with our <em>Twilio Account Credentials</em> stored as enviroment
+variables.</p>
+<hr>
+<p><strong>See Also:</strong></p>
+<ul>
+<li><a href="//www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest">Twilio SMS and MMS Quickstart</a></li>
+</ul>
+</div><div data-title="Handling the POST Request" data-file="app/controllers/notifications_controller.rb" class="step"><h2 id="handling-the-post-request">Handling the POST Request</h2>
+<p>This code handles the HTTP <code>POST</code> request issued by our landing page, and
+uses our <code>MessageSender</code> to send a SMS message to the real estate agent&#39;s
+phone number, which is also set as a environment variable. We include the lead&#39;s name, phone number, and inquiry directly in the body of the text message we send to the agent.</p>
+<p>Now the agent has all the information they need to immediately follow up on the lead.</p>
+<hr>
+<p><strong>See Also:</strong></p>
+<ul>
+<li><a href="//www.twilio.com/docs/ruby/install">The Twilio Ruby Helper Library</a></li>
+</ul>
+</div><div class="step"><h2 id="where-to-next-">Where to next?</h2>
+<p>That&#39;s it! We&#39;ve just implemented an application to instantly route leads
+to sales reps (in a real estate scenario) using text messages. If you&#39;re a
+Rails developer working with Twilio, you might want to check out these
+other tutorials.</p>
+<p><a href="//www.twilio.com/docs/tutorials/walkthrough/browser-calls/ruby/rails"><strong>Browser Calls</strong></a></p>
+<p>Twilio Client allows your users to make and receive phone calls in their
+browsers</p>
+<p><a href="//www.twilio.com/docs/tutorials/walkthrough/call-tracking/ruby/rails"><strong>Call Tracking</strong></a></p>
+<p>Call Tracking helps you measure the effectiveness of different marketing
+campaigns.</p>
+<h3 id="did-this-help-">Did this help?</h3>
+<p>Thanks for checking out this tutorial! If you have any feedback
+to share with us, we&#39;d love to hear it. Tweet
+<a href="//twitter.com/twilio">@twilio</a> to let us know what you
+think.</p>
+</div></div>
+<div class="saurus-files" style="display:none;"><textarea class="saurus-file" data-file="app/views/home/index.haml" data-mode="haml">LnJvdwogIC5jb2wtc20tOAogICAgJWgxPSBAaG91c2VbOnRpdGxlXQogICAgJWgzPSBAaG91c2VbOnByaWNlXQogICAgJXA9IGltYWdlX3RhZyAiaG91c2UuanBnIiwgY2xhc3M6ICJpbWctcmVzcG9uc2l2ZSIKICAgICVwPSBAaG91c2VbOmRlc2NyaXB0aW9uXQoKICAuY29sLXNtLTQuZGVtbwogICAgJWg0IFRhbGsgVG8gQW4gQWdlbnQKICAgICVwCiAgICAgIEEgdHJhaW5lZCByZWFsIGVzdGF0ZSBwcm9mZXNzaW9uYWwgaXMgc3RhbmRpbmcgYnkgdG8gYW5zd2VyIGFueQogICAgICBxdWVzdGlvbnMgeW91IG1pZ2h0IGhhdmUgYWJvdXQgdGhpcyBwcm9wZXJ0eS4gRmlsbCBvdXQgdGhlIGZvcm0gYmVsb3cKICAgICAgd2l0aCB5b3VyIGNvbnRhY3QgaW5mb3JtYXRpb24sIGFuZCBhbiBhZ2VudCB3aWxsIHJlYWNoIG91dCBzb29uLgoKICAgID0gZm9ybV90YWcgbm90aWZpY2F0aW9uc19wYXRoIGRvCiAgICAgICVpbnB1dHt0eXBlOiAnaGlkZGVuJywgbmFtZTogJ2hvdXNlX3RpdGxlJywgdmFsdWU6IEBob3VzZVs6dGl0bGVdfQogICAgICAuZm9ybS1ncm91cAogICAgICAgICVsYWJlbHtmb3I6ICduYW1lJ30gWW91ciBOYW1lCiAgICAgICAgJWlucHV0LmZvcm0tY29udHJvbHtuYW1lOiAnbmFtZScsIHBsYWNlaG9sZGVyOiAnSm9obiBBcHBsZXNlZWQnfQoKICAgICAgLmZvcm0tZ3JvdXAKICAgICAgICAlbGFiZWx7Zm9yOiAncGhvbmUnfSBZb3VyIFBob25lIE51bWJlcgogICAgICAgICVpbnB1dC5mb3JtLWNvbnRyb2x7bmFtZTogJ3Bob25lJywgcGxhY2Vob2xkZXI6ICcrMTY1MTIyMjk5ODgnfQoKICAgICAgLmZvcm0tZ3JvdXAKICAgICAgICAlbGFiZWx7Zm9yOiAnbWVzc2FnZSd9IEhvdyBjYW4gd2UgaGVscD8KICAgICAgICAlaW5wdXQuZm9ybS1jb250cm9se25hbWU6ICdtZXNzYWdlJ30KCiAgICAgICVidXR0b24uYnRuLmJ0bi1wcmltYXJ5e3R5cGU6ICdzdWJtaXQnfSBSZXF1ZXN0IEluZm8K</textarea>
+<textarea class="saurus-file" data-file="app/controllers/home_controller.rb" data-mode="ruby">Y2xhc3MgSG9tZUNvbnRyb2xsZXIgPCBBcHBsaWNhdGlvbkNvbnRyb2xsZXIKICBkZWYgaW5kZXgKICAgIEBob3VzZSA9IHsKICAgICAgdGl0bGU6ICc1NTUgU3Vubnlicm9vayBMYW5lJywKICAgICAgcHJpY2U6ICckMzQ5LDk5OScsCiAgICAgIGRlc2NyaXB0aW9uOiAnWW91IGFuZCB5b3VyIGZhbWlseSB3aWxsIGxvdmUgdGhpcyBjaGFybWluZyBob21lLiAnICsKICAgICAgJ0ZlYXR1cmluZyBncmFuaXRlIGFwcGxpYW5jZXMsIHN0YWlubGVzcyBzdGVlbCB3aW5kb3dzLCBhbmQgJyArCiAgICAgICdoaWdoIGVmZmljaWVuY3kgZHVhbCBtdWQgcm9vbXMsIHRoaXMgam9pbnQgaXMgbG9hZGVkIHRvIHRoZSBtYXguICcgKwogICAgICAnTW90aXZhdGVkIHNlbGxlcnMgaGF2ZSBwcmljZWQgZm9yIGEgcXVpY2sgc2FsZSwgYWN0IG5vdyEnCiAgICB9CiAgZW5kCmVuZAo=</textarea>
+<textarea class="saurus-file" data-file="lib/message_sender.rb" data-mode="ruby">Y2xhc3MgTWVzc2FnZVNlbmRlcgogIGRlZiBzZWxmLnNlbmRfbWVzc2FnZShtZXNzYWdlKQogICAgbmV3LnNlbmRfbWVzc2FnZShtZXNzYWdlKQogIGVuZAoKICBkZWYgaW5pdGlhbGl6ZQogICAgIyBUbyBmaW5kIFRXSUxJT19BQ0NPVU5UX1NJRCwgVFdJTElPX0FVVEhfVE9LRU4gdmlzaXQKICAgICMgaHR0cHM6Ly93d3cudHdpbGlvLmNvbS91c2VyL2FjY291bnQKICAgIGFjY291bnRfc2lkID0gRU5WWydUV0lMSU9fQUNDT1VOVF9TSUQnXQogICAgYXV0aF90b2tlbiAgPSBFTlZbJ1RXSUxJT19BVVRIX1RPS0VOJ10KICAgIEBjbGllbnQgPSBUd2lsaW86OlJFU1Q6OkNsaWVudC5uZXcoYWNjb3VudF9zaWQsIGF1dGhfdG9rZW4pCiAgZW5kCgogIGRlZiBzZW5kX21lc3NhZ2UobWVzc2FnZSkKICAgIEBjbGllbnQuYWNjb3VudC5tZXNzYWdlcy5jcmVhdGUoCiAgICAgIGZyb206ICB0d2lsaW9fbnVtYmVyLAogICAgICB0bzogICAgYWdlbnRfbnVtYmVyLAogICAgICBib2R5OiAgbWVzc2FnZQogICAgKQogIGVuZAoKICBwcml2YXRlCgogIGRlZiB0d2lsaW9fbnVtYmVyCiAgICAjIEEgVHdpbGlvIG51bWJlciB5b3UgY29udHJvbCAtIGNob29zZSBvbmUgZnJvbToKICAgICMgaHR0cHM6Ly93d3cudHdpbGlvLmNvbS91c2VyL2FjY291bnQvcGhvbmUtbnVtYmVycy9pbmNvbWluZwogICAgIyBTcGVjaWZ5IGluIEUuMTY0IGZvcm1hdCwgZS5nLiAiKzE2NTE5OTk4ODc3IgogICAgdHdpbGlvX251bWJlciA9IEVOVlsnVFdJTElPX05VTUJFUiddCiAgZW5kCgogIGRlZiBhZ2VudF9udW1iZXIKICAgICMgVGhlIHNhbGVzIHJlcCAvIGFnZW50J3MgcGhvbmUgbnVtYmVyCiAgICBhZ2VudF9udW1iZXIgPSBFTlZbJ0FHRU5UX05VTUJFUiddCiAgZW5kCmVuZAo=</textarea>
+<textarea class="saurus-file" data-file="app/controllers/notifications_controller.rb" data-mode="ruby">Y2xhc3MgTm90aWZpY2F0aW9uc0NvbnRyb2xsZXIgPCBBcHBsaWNhdGlvbkNvbnRyb2xsZXIKICBkZWYgY3JlYXRlCiAgICBNZXNzYWdlU2VuZGVyLnNlbmRfbWVzc2FnZShtZXNzYWdlKQogICAgcmVkaXJlY3RfdG8gcm9vdF91cmwsCiAgICAgIHN1Y2Nlc3M6ICdUaGFua3MhIEFuIGFnZW50IHdpbGwgYmUgY29udGFjdGluZyB5b3Ugc2hvcnRseS4nCiAgcmVzY3VlIFR3aWxpbzo6UkVTVDo6UmVxdWVzdEVycm9yID0+IGVycm9yCiAgICBwIGVycm9yLm1lc3NhZ2UKICAgIHJlZGlyZWN0X3RvIHJvb3RfdXJsLAogICAgICBlcnJvcjogJ09vcHMhIFRoZXJlIHdhcyBhbiBlcnJvci4gUGxlYXNlIHRyeSBhZ2Fpbi4nCiAgZW5kCgogIHByaXZhdGUKCiAgZGVmIG1lc3NhZ2UKICAgICJOZXcgbGVhZCByZWNlaXZlZCBmb3IgI3twYXJhbXNbOmhvdXNlX3RpdGxlXX0uICIgXAogICAgIkNhbGwgI3twYXJhbXNbOm5hbWVdfSBhdCAje3BhcmFtc1s6cGhvbmVdfS4gIiBcCiAgICAiTWVzc2FnZTogI3twYXJhbXNbOm1lc3NhZ2VdfSIKICBlbmQKZW5kCg==</textarea>
+</div>
+</div><div class="saurus-overview"><ul></ul></div></div><div class="saurus-code"><div class="file-path"><span class="crumb-container"></span><i class="fa fa-fw fa-folder"></i></div><div class="saurus-editor"></div></div><div class="saurus-explorer"><div class="saurus-file-list"></div><a href="https://github.com/TwilioDevEd/lead-alerts-rails" target="_blank" class="explorer-get-code"> <i class="fa fa-lg fa-github-square"> </i>View Code on GitHub</a></div></div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="ace/ace.js"></script><script src="ace/theme-monokai.js"></script><script src="viewsaurus.js"></script></body></html>
