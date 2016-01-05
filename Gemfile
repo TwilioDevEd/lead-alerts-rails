@@ -18,4 +18,6 @@ gem 'twilio-ruby'
 group :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
