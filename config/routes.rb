@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'home#index'
-  post 'notifications/create'
+  resources 'notifications', only: [:create]
 end
