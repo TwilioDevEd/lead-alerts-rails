@@ -10,19 +10,23 @@ This demo application shows how to implement instant lead alerts using Ruby on R
 
 This project is built using the [Ruby on Rails](http://rubyonrails.org/) web framework.
 
-1. First clone this repository and `cd` into its directory:
+1. Clone this repository and `cd` into it.
+
    ```
    git clone git@github.com:TwilioDevEd/lead-alerts-rails.gitß
    cd lead-alerts-rails
    ```
 
-1. Install the dependencies:
+1. Install the dependencies.
+
    ```
    bundle
    ```
 
-1. Export the environment variables:
+1. Export the environment variables.
+
    You can find the `AccountSID` and the `AuthToken` at https://www.twilio.com/user/account/settings.
+
    ```
    export TWILIO_ACCOUNT_SID=Your Twilio Account SID
    export TWILIO_AUTH_TOKEN=Your Twilio Auth Token
@@ -30,12 +34,14 @@ This project is built using the [Ruby on Rails](http://rubyonrails.org/) web fra
    export AGENT_NUMBER=The Agent's Phone Number
    ```
 
-1. Make sure the tests succeed:
+1. Make sure the tests succeed.
+
    ```
    rspec
    ```
 
-1. Run the server:
+1. Run the server.
+
    ```
    rails s
    ```
