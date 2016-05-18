@@ -5,7 +5,7 @@
 
       You probably already have landing pages or product detail views in your
       web application, which you're using to generate leads for your business.
-      On this tutorial we'll use Twilio SMS to send a message when a new lead
+      In this tutorial we'll use Twilio SMS to send a message when a new lead
       is found.
 
       ![Lead Alerts Flow](//s3.amazonaws.com/howtodocs/lead-alerts-flow.png)
@@ -19,14 +19,14 @@
       Let's see how it works! Click the next arrow above to continue the tutorial.
 
   .step(
-    data-title='Landing Page Data', 
+    data-title='Landing Page Data',
     data-file='app/controllers/home_controller.rb')
     :markdown
       ## Landing Page Data
 
       To display a landing page for our house, we need some data about
       the fictional house we've put on the market. For demonstration purposes
-      we've hard-coded a hash containing information we need.
+      we've created a hard-coded hash containing the information we need.
 
       ---
 
@@ -40,7 +40,7 @@
       ## Rendering the Landing Page
 
       In our template we insert data about the house and in a sidebar
-      we include a form for the user. Here they enter their contact information
+      we include a form for the user. In that form they enter their contact information
       and request more info about the home.
 
       ---
@@ -91,8 +91,8 @@
 
       That's it! We've just implemented an application to instantly route leads
       to sales people using text messages. If you're a
-      Rails developer working with Twilio, you might want to check out these
-      other tutorials.
+      Rails developer working with Twilio, you might want to check these
+      other tutorials out.
 
       [**Browser Calls**](//www.twilio.com/docs/tutorials/walkthrough/browser-calls/ruby/rails)
 
