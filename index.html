@@ -12,7 +12,7 @@
 }</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Instant Lead Alerts"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Instant Lead Alerts</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>In this tutorial, we will learn how to instantly route leads to sales reps (in a real estate scenario) using text messages. Let's get started!</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Setting Up The Application" class="chapter"><div data-title="What Are We Building?" data-file="app/views/home/index.haml" class="step"><h2 id="what-are-we-building-">What Are We Building?</h2>
 <p>You probably already have landing pages or product detail views in your
 web application, which you&#39;re using to generate leads for your business.
-On this tutorial we&#39;ll use Twilio SMS to send a message when a new lead
+In this tutorial we&#39;ll use Twilio SMS to send a message when a new lead
 is found.</p>
 <p><img src="//s3.amazonaws.com/howtodocs/lead-alerts-flow.png" alt="Lead Alerts Flow"></p>
 <p>In this example we&#39;ll be implementing instant lead alerts for real estate
@@ -24,7 +24,7 @@ the moment a potential customer requests information.</p>
 </div><div data-title="Landing Page Data" data-file="app/controllers/home_controller.rb" class="step"><h2 id="landing-page-data">Landing Page Data</h2>
 <p>To display a landing page for our house, we need some data about
 the fictional house we&#39;ve put on the market. For demonstration purposes
-we&#39;ve hard-coded a hash containing information we need.</p>
+we&#39;ve created a hard-coded hash containing the information we need.</p>
 <hr>
 <p><strong>See Also:</strong></p>
 <ul>
@@ -33,7 +33,7 @@ we&#39;ve hard-coded a hash containing information we need.</p>
 </ul>
 </div><div data-title="Rendering the Landing Page" data-file="app/views/home/index.haml" class="step"><h2 id="rendering-the-landing-page">Rendering the Landing Page</h2>
 <p>In our template we insert data about the house and in a sidebar
-we include a form for the user. Here they enter their contact information
+we include a form for the user. In that form they enter their contact information
 and request more info about the home.</p>
 <hr>
 <p><strong>See Also:</strong></p>
@@ -66,8 +66,8 @@ the text message sent to the agent.</p>
 </div><div class="step"><h2 id="where-to-next-">Where to next?</h2>
 <p>That&#39;s it! We&#39;ve just implemented an application to instantly route leads
 to sales people using text messages. If you&#39;re a
-Rails developer working with Twilio, you might want to check out these
-other tutorials.</p>
+Rails developer working with Twilio, you might want to check these
+other tutorials out.</p>
 <p><a href="//www.twilio.com/docs/tutorials/walkthrough/browser-calls/ruby/rails"><strong>Browser Calls</strong></a></p>
 <p>Twilio Client allows your users to make and receive phone calls in their
 web browsers.</p>
