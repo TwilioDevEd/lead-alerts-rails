@@ -13,7 +13,7 @@ This project is built using the [Ruby on Rails](http://rubyonrails.org/) web fra
 1. Clone this repository and `cd` into it.
 
    ```
-   git clone git@github.com:TwilioDevEd/lead-alerts-rails.gitß
+   git clone git@github.com:TwilioDevEd/lead-alerts-rails.git
    cd lead-alerts-rails
    ```
 
