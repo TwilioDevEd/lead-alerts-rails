@@ -1,41 +1,58 @@
+<a href="https://www.twilio.com">
+  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+</a>
+
 # Instant Lead Alerts for Ruby on Rails
+
+[![Build Status](https://travis-ci.org/TwilioDevEd/task-router-rails.svg?branch=master)](https://travis-ci.org/TwilioDevEd/task-router-rails)
 
 This demo application shows how to implement instant lead alerts using Ruby on Rails. Notify sales reps or agents right away when a new lead comes in for a real estate listing or other high value channel.
 
-[![Build Status](https://travis-ci.org/TwilioDevEd/lead-alerts-rails.svg?branch=master)](https://travis-ci.org/TwilioDevEd/lead-alerts-rails)
+[Read the full tutorial here](https://www.twilio.com/docs/tutorials/walkthrough/lead-alerts/ruby/rails)!
 
 ## Local development
 
-This project is built using the [Ruby on Rails](http://rubyonrails.org/) web framework.
+This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
 
-1. First clone this repository and `cd` into its directory:
-   ```
-   git clone git@github.com:TwilioDevEd/lead-alerts-rails.gitß
-   cd lead-alerts-rails
-   ```
+1. First clone this repository and `cd` into it.
 
-1. Install the dependencies:
-   ```
-   bundle
+   ```bash
+   $ git clone git@github.com:TwilioDevEd/lead-alerts-rails.git
+   $ cd lead-alerts-rails
    ```
 
-1. Export the environment variables:
-   You can find the `AccountSID` and the `AuthToken` at https://www.twilio.com/user/account/settings.
-   ```
-   export TWILIO_ACCOUNT_SID=Your Twilio Account SID
-   export TWILIO_AUTH_TOKEN=Your Twilio Auth Token
-   export TWILIO_NUMBER=Your Twilio Phone Number
-   export AGENT_NUMBER=The Agent's Phone Number
+1. Install the dependencies.
+
+   ```bash
+   $ bundle install
    ```
 
-1. Make sure the tests succeed:
-   ```
-   rspec
+1. Copy the sample configuration file and edit it to match your configuration.
+
+   ```bash
+   $ cp .env.example .env
    ```
 
-1. Run the server:
+   You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
+   [Twilio Account Settings](https://www.twilio.com/console/account/settings).
+   You will also need a `TWILIO_NUMBER`, which you may find [here](https://www.twilio.com/console/phone-numbers/incoming).
+
+   Run:
+   ```bash
+   $ source .env
    ```
-   rails s
+   to export the environment variables.
+
+1. Make sure the tests succeed.
+
+   ```bash
+   $ bundle exec rspec
+   ```
+
+1. Start the server.
+
+   ```bash
+   $ bundle exec rails s
    ```
 
 1. Check it out at [http://localhost:3000](http://localhost:3000)
