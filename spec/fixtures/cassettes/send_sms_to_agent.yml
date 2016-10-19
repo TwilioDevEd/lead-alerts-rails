@@ -5,19 +5,19 @@ http_interactions:
     uri: https://<TWILIO ACCOUNT SID>:<TWILIO AUTH TOKEN>@api.twilio.com/2010-04-01/Accounts/<TWILIO
       ACCOUNT SID>/Messages.json
     body:
-      encoding: US-ASCII
-      string: From=%2B141523XXXXX&To=%2B165130XXXXX&Body=notification
+      encoding: UTF-8
+      string: Body=notification&From=%2B13473945382&To=%2B5571981265131
     headers:
-      Accept:
-      - application/json
+      User-Agent:
+      - twilio-ruby/5.0.0.rc17 (ruby/x86_64-linux 2.3.0-p0)
       Accept-Charset:
       - utf-8
-      User-Agent:
-      - twilio-ruby/4.9.0 (ruby/x86_64-darwin14 2.2.2-p95)
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Content-Type:
       - application/x-www-form-urlencoded
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 201
@@ -37,32 +37,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 05 Jan 2016 12:56:34 GMT
+      - Wed, 19 Oct 2016 18:28:58 GMT
       Strict-Transport-Security:
       - max-age=15768000
       Twilio-Request-Duration:
-      - '0.305'
+      - '0.168'
       Twilio-Request-Id:
-      - RQ3365d7aae7d744768e8cf228be48014b
+      - RQ0d58d15302d24a609556d8c471df45c3
       X-Powered-By:
       - AT-5000
       X-Shenanigans:
       - none
       Content-Length:
-      - '776'
+      - '778'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"sid": "SM2ec2a280f7a649f3920c0b1e583c10b2", "date_created": "Tue,
-        05 Jan 2016 12:56:34 +0000", "date_updated": "Tue, 05 Jan 2016 12:56:34 +0000",
+      string: '{"sid": "SM8a71587d42ef49dd9d324facca0ef6fd", "date_created": "Wed,
+        19 Oct 2016 18:28:58 +0000", "date_updated": "Wed, 19 Oct 2016 18:28:58 +0000",
         "date_sent": null, "account_sid": "<TWILIO ACCOUNT SID>", "to": "<AGENT NUMBER>",
         "from": "<TWILIO NUMBER>", "messaging_service_sid": null, "body": "notification",
         "status": "queued", "num_segments": "1", "num_media": "0", "direction": "outbound-api",
         "api_version": "2010-04-01", "price": null, "price_unit": "USD", "error_code":
         null, "error_message": null, "uri": "/2010-04-01/Accounts/<TWILIO ACCOUNT
-        SID>/Messages/SM2ec2a280f7a649f3920c0b1e583c10b2.json", "subresource_uris":
-        {"media": "/2010-04-01/Accounts/<TWILIO ACCOUNT SID>/Messages/SM2ec2a280f7a649f3920c0b1e583c10b2/Media.json"}}'
+        SID>/Messages/SM8a71587d42ef49dd9d324facca0ef6fd.json", "subresource_uris":
+        {"media": "/2010-04-01/Accounts/<TWILIO ACCOUNT SID>/Messages/SM8a71587d42ef49dd9d324facca0ef6fd/Media.json"}}'
     http_version: 
-  recorded_at: Tue, 05 Jan 2016 12:56:35 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Wed, 19 Oct 2016 18:28:58 GMT
+recorded_with: VCR 3.0.1
