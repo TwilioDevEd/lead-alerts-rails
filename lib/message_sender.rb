@@ -12,7 +12,7 @@ class MessageSender
   end
 
   def send_message(message)
-    @client.account.messages.create(
+    @client.messages.create(
       from:  twilio_number,
       to:    agent_number,
       body:  message
