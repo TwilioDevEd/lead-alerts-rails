@@ -17,20 +17,20 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
 1. First clone this repository and `cd` into it.
 
    ```bash
-   $ git clone git@github.com:TwilioDevEd/lead-alerts-rails.git
-   $ cd lead-alerts-rails
+   git clone git@github.com:TwilioDevEd/lead-alerts-rails.git
+   cd lead-alerts-rails
    ```
 
 1. Install the dependencies.
 
    ```bash
-   $ bundle install
+   bundle install
    ```
 
 1. Copy the sample configuration file and edit it to match your configuration.
 
    ```bash
-   $ cp .env.example .env
+   cp .env.example .env
    ```
 
    You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
@@ -39,20 +39,20 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
 
    Run:
    ```bash
-   $ source .env
+   source .env
    ```
    to export the environment variables.
 
 1. Make sure the tests succeed.
 
    ```bash
-   $ bundle exec rspec
+   bundle exec rspec
    ```
 
 1. Start the server.
 
    ```bash
-   $ bundle exec rails s
+   bundle exec rails s
    ```
 
 1. Check it out at [http://localhost:3000](http://localhost:3000)
