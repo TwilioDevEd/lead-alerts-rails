@@ -26,3 +26,8 @@ jobs:
         bundle install --jobs 4 --retry 3
     - name: Test
       run: bundle exec rspec
+      env:
+        TWILIO_ACCOUNT_SID: 'TWILIO-ACCOUNT-SID'
+        TWILIO_AUTH_TOKEN: 'TWILIO-AUTH-TOKEN'
+        TWILIO_NUMBER: 'TWILIO-NUMBER'
+        AGENT_NUMBER: 'AGENT-NUMBER'
