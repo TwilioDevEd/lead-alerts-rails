@@ -4,7 +4,7 @@
 
 # Instant Lead Alerts for Ruby on Rails
 
-[![Build Status](https://travis-ci.org/TwilioDevEd/lead-alerts-rails.svg?branch=master)](https://travis-ci.org/TwilioDevEd/lead-alerts-rails)
+![](https://github.com/TwilioDevEd/lead-alerts-rails/workflows/Ruby/badge.svg)
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
 
@@ -39,11 +39,10 @@ This project is built using [Ruby on Rails](http://rubyonrails.org/) Framework.
    [Twilio Account Settings](https://www.twilio.com/console/account/settings).
    You will also need a `TWILIO_NUMBER`, which you may find [here](https://www.twilio.com/console/phone-numbers/incoming).
 
-   Run:
-   ```bash
-   source .env
-   ```
-   to export the environment variables.
+   The `AGENT_NUMBER` variable represents the number alerts will be sent to. Please make sure you have allowed SMS to be sent to the Country this number belongs to on the [Global SMS Permissions page](https://www.twilio.com/console/sms/settings/geo-permissions). Also, if you are on a trial account, make sure you have verified this number on the [Verified Callers IDs page](https://www.twilio.com/console/phone-numbers/verified).
+
+   The phone numbers should be in
+   [E.164 format](https://www.twilio.com/help/faq/phone-numbers/how-do-i-format-phone-numbers-to-work-internationally).
 
 1. Make sure the tests succeed.
 
@@ -64,5 +63,6 @@ That's it!
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
