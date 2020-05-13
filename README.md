@@ -34,10 +34,10 @@ Before we begin, we need to collect all the config values we need to run the app
 
 | Config Value | Description |
 | :----------  | :---------- |
-| TWILIO_ACCOUNT_SID / TWILIO_AUTH_TOKEN | You could find them in your
-   [Twilio Account Settings](https://www.twilio.com/console/account/settings)|
-| TWILIO_NUMBER | You may find [here](https://www.twilio.com/console/phone-numbers/incoming) |
+| TWILIO_ACCOUNT_SID and TWILIO_AUTH_TOKEN | You could find them in your [Twilio Account Settings](https://www.twilio.com/console/account/settings)|
+| TWILIO_NUMBER | You may find it [here](https://www.twilio.com/console/phone-numbers/incoming) |
 | AGENT_NUMBER |  This variable represents the number alerts will be sent to. Please make sure you have allowed SMS to be sent to the Country this number belongs to on the [Global SMS Permissions page](https://www.twilio.com/console/sms/settings/geo-permissions). Also, if you are on a trial account, make sure you have verified this number on the [Verified Callers IDs page](https://www.twilio.com/console/phone-numbers/verified) |
+
 
 ### Local Development
 
