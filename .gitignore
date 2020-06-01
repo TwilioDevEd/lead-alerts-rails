@@ -21,3 +21,5 @@
 
 # Ignore bundle folder
 /vendor/bundle
+
+.tool-versions
