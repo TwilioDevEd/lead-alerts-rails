@@ -2,4 +2,4 @@ install:
 	bundle install
 
 serve:
-	bundle exec rails server
+	bundle exec rails server --binding 0.0.0.0
