@@ -23,3 +23,5 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
+
+gem 'tzinfo-data', '~> 1.2020', '>= 1.2020.1'
