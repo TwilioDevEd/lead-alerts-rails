@@ -26,6 +26,7 @@ Implementations in other languages:
 
 - [Ruby](https://www.ruby-lang.org/) **2.6.x** version
 - [Sqlite3](https://www.sqlite.org/)
+- [Node.js](https://nodejs.org/en/) **10.x** or **12.x** version
 
 ### Twilio Account Settings
 
@@ -48,13 +49,13 @@ Before we begin, we need to collect all the config values we need to run the app
    cd lead-alerts-rails
    ```
 
-1. Install the dependencies.
+2. Install the dependencies.
 
    ```bash
    make install
    ```
 
-1. Copy the sample configuration file and edit it to match your configuration.
+3. Copy the sample configuration file and edit it to match your configuration.
 
    ```bash
    cp .env.example .env
@@ -62,13 +63,18 @@ Before we begin, we need to collect all the config values we need to run the app
 
    See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables. The phone numbers should be in [E.164 format](https://www.twilio.com/help/faq/phone-numbers/how-do-i-format-phone-numbers-to-work-internationally).
 
-1. Start the server.
+4. Setup server
+   ```bash
+   make serve-setup
+   ```
+
+5. Start the server.
 
    ```bash
    make serve
    ```
 
-1. Navigate to [http://localhost:3000](http://localhost:3000)
+6. Navigate to [http://localhost:3000](http://localhost:3000)
 
 That's it!
 
