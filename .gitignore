@@ -18,3 +18,8 @@
 
 # Ignore .env
 .env
+
+# Ignore bundle folder
+/vendor/bundle
+
+.tool-versions
