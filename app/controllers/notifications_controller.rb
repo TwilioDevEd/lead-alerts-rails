@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+require 'message_sender'
 class NotificationsController < ApplicationController
   def create
     MessageSender.send_message(message)
