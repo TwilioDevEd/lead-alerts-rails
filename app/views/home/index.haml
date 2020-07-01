@@ -2,7 +2,7 @@
   .col-sm-8
     %h1= @house[:title]
     %h3= @house[:price]
-    %p= image_tag "house.jpg", class: "img-responsive"
+    %p= image_pack_tag "house.jpg", class: "img-responsive"
     %p= @house[:description]
 
   .col-sm-4.demo
