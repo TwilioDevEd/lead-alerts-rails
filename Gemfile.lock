@@ -76,7 +76,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.7)
+    concurrent-ruby (1.1.8)
     crack (0.4.5)
       rexml
     crass (1.0.6)
@@ -228,7 +228,7 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2020.6)
+    tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -264,7 +264,7 @@ DEPENDENCIES
   sqlite3
   turbolinks
   twilio-ruby (~> 5.46.0)
-  tzinfo-data (~> 1.2020)
+  tzinfo-data (~> 1.2021)
   uglifier (>= 4.2.0)
   vcr
   webmock
