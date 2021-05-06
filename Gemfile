@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '6.1.3'
+gem 'rails', '6.1.3.2'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'sqlite3'
