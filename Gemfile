@@ -21,7 +21,7 @@ group :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '>= 3.12.1'
 end
 
 group :development do
