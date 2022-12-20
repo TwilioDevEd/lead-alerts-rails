@@ -7,7 +7,7 @@ gem 'sqlite3'
 
 group :assets do
   gem 'coffee-rails', '~> 5.0'
-  gem 'sass-rails', '~> 6.0'
+  gem 'sass-rails', '~> 6.0', '>= 6.0.0'
   gem 'uglifier', '>= 4.2.0'
 end
 
