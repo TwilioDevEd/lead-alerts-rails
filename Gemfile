@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '6.1.4'
+gem 'rails', '6.1.7.1'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'sqlite3'
 
 group :assets do
-  gem 'coffee-rails', '~> 5.0'
-  gem 'sass-rails', '~> 6.0'
+  gem 'coffee-rails', '~> 5.0', '>= 5.0.0'
+  gem 'sass-rails', '~> 6.0', '>= 6.0.0'
   gem 'uglifier', '>= 4.2.0'
 end
 
