@@ -15,7 +15,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'twilio-ruby', '~> 5.57.1'
+gem 'twilio-ruby', '~> 5.76.0'
 
 group :test do
   gem 'byebug'
